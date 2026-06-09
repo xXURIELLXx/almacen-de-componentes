@@ -1,0 +1,24 @@
+id,nombre,categoria,cantidad,modelo,estado,proyecto_base
+MCU-001,Arduino Nano,microcontrolador,2,ATmega328P,nuevo,pruebas y aprendizaje
+MCU-002,ESP32 Super Mini,microcontrolador IoT,1,ESP32-C3,nuevo,nodo IoT compacto
+MCU-003,ESP32 WROOM,microcontrolador IoT,1,ESP-WROOM-32,nuevo,terrario y nodo IoT
+COM-001,NRF24L01 DIP,comunicacion,1,NRF24L01,nuevo,enlace RF
+COM-002,NRF24L01 PA LNA,comunicacion,1,NRF24L01P,nuevo,enlace RF largo alcance
+ACT-001,Servo SG90,servomotor,7,SG90,nuevo,calibrador de servos
+ACT-002,Motores DC,motor,10,5V 1A,nuevo,banco de motores
+SEN-001,DHT11 DHT22,sensor,1,DHT,nuevo,ambiente
+PWR-001,Bateria sellada,bateria,1,BR-1201,nuevo,respaldo 12V
+PROG-001,AVR ISP Shield,programacion,1,AVR ISP,nuevo,programacion AVR
+DRV-001,Keyes L298,driver,1,L298,nuevo,banco de motores
+DRV-002,PCA9685,driver PWM,1,PCA9685,nuevo,control de servos
+SEN-002,KY-037,sensor,1,KY-037,nuevo,sonido
+SEN-003,HC-SR501,sensor,1,HC-SR501,nuevo,presencia
+PWR-002,TP4056,cargador,10,4056,nuevo,baterias litio 1S
+IN-002,Touch HW-139,entrada,5,HW-139,nuevo,botones tactiles
+SEN-004,AHT10,sensor,1,AHT10,nuevo,nodo ambiental
+SEN-005,MPU-6050,IMU,2,GY-525,nuevo con sospecha,medicion movimiento
+DISP-001,TFT SPI,pantalla,1,ST7735 probable,nuevo,interfaz grafica
+REC-001,Tarjeta dron camara,recuperado,2,YD-W6833-v.1c,recuperado,investigacion drones
+REC-002,Tarjeta dron principal,recuperado,2,HY-2016R a,recuperado,investigacion drones
+BAT-002,LiPo 952540,bateria,1,750mAh,nuevo,alimentacion 1S
+BAT-003,LiPo 952540,bateria,1,1000mAh,nuevo,alimentacion 1S
