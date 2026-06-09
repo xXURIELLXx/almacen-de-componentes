@@ -1,0 +1,18 @@
+# Archivos temporales
+*.tmp
+*.bak
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Datos privados locales
+.env
+secrets.*
