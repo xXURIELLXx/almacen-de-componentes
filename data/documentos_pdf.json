@@ -1,1 +1,123 @@
-[]
+[
+  {
+    "id": "PDF-001",
+    "archivo": "Escudo de expansion programable AVR ISP con zumbador para Arduino R3 Mega2560 Pro Mini Atmega328P modulo SPI de quemador de arranque - AliExpress 502.pdf",
+    "componente_relacionado": "PROG-001 AVR ISP Shield",
+    "tipo": "programador / bootloader shield",
+    "datos_clave": {
+      "voltaje": "5 V",
+      "corriente": "500 mA maximo indicado",
+      "interfaces": "SPI/ICSP, ISP 6 pines, ISP 10 pines, USB-TTL FT232RL/CH340G",
+      "compatibilidad": "Arduino R3, Mega2560, Nano, Pro Mini 5V 16MHz; ATmega328P, ATmega168P, ATmega8",
+      "indicadores": "LED HEART BEAT, PROG, ERROR y buzzer"
+    },
+    "pines_conexiones": "ZIF 28P, ISP_6PIN, ISP_10PIN, pines SPI/ICSP",
+    "uso_inicial": "grabar bootloader en ATmega o placas Arduino compatibles",
+    "riesgos": ["respetar orientacion DIP", "no usar con objetivos 3.3 V sin validar", "detener ante LED ERROR"],
+    "fuente": "paginas 5-6 del PDF"
+  },
+  {
+    "id": "PDF-002",
+    "archivo": "1pcs_lot ATMEGA328P-PU ATMEGA328P-U ATMEGA328P DIP-28 IC In Stock - AliExpress 502.pdf",
+    "componente_relacionado": "ATmega328P DIP-28",
+    "tipo": "microcontrolador suelto",
+    "datos_clave": {"modelo": "ATMEGA328P-PU / ATMEGA328P-U", "encapsulado": "DIP-28", "bootloader": "no confirmado"},
+    "pines_conexiones": "usar zocalo/programador ISP; requiere circuito minimo si se usa fuera de Arduino",
+    "uso_inicial": "repuesto o chip para bootloader con AVR ISP Shield",
+    "riesgos": ["no asumir bootloader", "usar orientacion correcta", "validar circuito minimo"],
+    "fuente": "paginas 1-3 del PDF"
+  },
+  {
+    "id": "PDF-003",
+    "archivo": "ESP32 S2 Mini _ ESP8266 D1 Mini placa CH340 _ ESP32-S2FN4R2 4MB FLASH 2MB PSRAM Placa de desarrollo MicroPython - AliExpress 502.pdf",
+    "componente_relacionado": "ESP32-S2 Mini / ESP8266 D1 Mini / ESP32-WROOM-32 D1 Mini",
+    "tipo": "placas de desarrollo WiFi",
+    "datos_clave": {
+      "advertencia": "el PDF mezcla variantes; identificar chip real antes de cablear",
+      "esp8266_d1_mini": "11 I/O, 1 ADC 0-3.3V, IO 3.3V, alimentacion 5V en placa",
+      "esp32_s2_mini": "ESP32-S2FN4R2, USB-C, 4MB Flash, 2MB PSRAM, 27 I/O, ADC, DAC, I2C, SPI, UART, USB OTG",
+      "d1_mini_esp32": "ESP32-WROOM-32, WiFi+Bluetooth, USB-C, CH9102, 31x39mm"
+    },
+    "pines_conexiones": "depende de la variante; GPIO a 3.3 V",
+    "uso_inicial": "identificar placa, instalar driver, cargar Blink/escaneo I2C o firmware MicroPython",
+    "riesgos": ["GPIO no toleran 5V", "pinout puede no coincidir con el titulo del PDF"],
+    "fuente": "paginas 4, 6, 7 y 9 del PDF"
+  },
+  {
+    "id": "PDF-004",
+    "archivo": "Mini Bluetooth 5,1 DC 9-24V modulo de placa amplificadora de potencia Digital de Audio 2,1 canales 2,0 estereo de doble canal 30W _ 2 15W _ 2 + 30W - AliExpress 44.pdf",
+    "componente_relacionado": "Amplificador Bluetooth 302T/LT21",
+    "tipo": "audio / potencia",
+    "datos_clave": {"alimentacion": "9-24 V / 3 A para 302T", "salida": "302/302T 30W+30W; LT21 15W+15W+30W", "entradas": "Bluetooth 5.1, AUX, USB drive, USB sound card", "bocinas": "10-50W, 4-8 ohm; recomendado 8 ohm"},
+    "pines_conexiones": "jack DC 5.5x2.1, salida L/R, AUX, USB",
+    "uso_inicial": "probar con fuente estable, fusible y bocinas 8 ohm a bajo volumen",
+    "riesgos": ["si se usan 4 ohm no exceder 12V", "no cortocircuitar salidas", "no alimentar desde microcontrolador"],
+    "fuente": "paginas 4, 10, 12 y 20 del PDF"
+  },
+  {
+    "id": "PDF-005",
+    "archivo": "20 piezas-Modulo de placa de carga de bateria de litio, proteccion de carga 2 en 1, interfaz Micro USB_tipo c, 1A, 5V, TP4056 - AliExpress 502.pdf",
+    "componente_relacionado": "PWR-002 TP4056",
+    "tipo": "cargador Li-ion/LiPo 1S",
+    "datos_clave": {"entrada": "5 V USB-C/Micro USB", "corriente_carga": "1000 mA max", "corte_carga": "4.2 V +/-1%", "proteccion_descarga": "2.5 V", "sobrecorriente": "3 A", "tamano": "2.6x1.7 cm / 28x17 mm"},
+    "pines_conexiones": "B+, B-, OUT+, OUT-",
+    "uso_inicial": "cargar una celda LiPo/Li-ion 3.7V 1S; salida protegida por OUT+ OUT-",
+    "riesgos": ["no usar con 12V", "no usar con celdas en serie", "validar polaridad", "puede calentarse a 1A"],
+    "fuente": "paginas 3, 4, 6, 8 y 9 del PDF"
+  },
+  {
+    "id": "PDF-006",
+    "archivo": "Modulo de Sensor de llama IR, Detector Smartsense para deteccion de temperatura adecuado para Arduino, envio gratis, venta al por mayor - AliExpress.pdf",
+    "componente_relacionado": "SEN-006 sensor de llama IR",
+    "tipo": "sensor optico",
+    "datos_clave": {"rango": "760-1100 nm aprox", "angulo": "60 grados", "voltaje": "3.3-5 V", "comparador": "LM393", "salida": "digital DO 0/1", "ajuste": "potenciometro"},
+    "pines_conexiones": "VCC, GND, DO",
+    "uso_inicial": "deteccion digital de flama con ajuste de sensibilidad",
+    "riesgos": ["no usar como unico sistema de seguridad", "puede activarse con luz IR", "no acercar a calor excesivo"],
+    "fuente": "paginas 4-5 del PDF"
+  },
+  {
+    "id": "PDF-007",
+    "archivo": "Modulo de deteccion de Sensor de microfono de sonido de alta sensibilidad para AVR PIC KY-037 Modulo de Sensor de deteccion de sonido Sensor de sonido - AliExpress 502.pdf",
+    "componente_relacionado": "SEN-002 KY-037",
+    "tipo": "sensor de sonido",
+    "datos_clave": {"chip": "LM393", "microfono": "electret", "voltaje": "3.3-5 V o 4-6 V segun seccion", "salida": "digital por umbral, efectiva en bajo", "ajuste": "potenciometro"},
+    "pines_conexiones": "VCC, GND, OUT; algunas variantes AO/DO",
+    "uso_inicial": "detectar presencia/intensidad de ruido",
+    "riesgos": ["no reconoce palabras ni frecuencia", "validar salida activa en bajo", "validar nivel para ESP32"],
+    "fuente": "paginas 3-4 del PDF"
+  },
+  {
+    "id": "PDF-008",
+    "archivo": "Cosplay ojos Led flexibles flexibles Diy para Halloween hierro exposicion difusa hombre mascara accesorios de luz de ojos puede recortar accesorios nuevo - AliExpress 200000532.pdf",
+    "componente_relacionado": "LED-002 ojos LED flexibles",
+    "tipo": "iluminacion cosplay",
+    "datos_clave": {"modelo": "AAA-0221-07", "alimentacion": "2 baterias AAA", "tamano": "27.5x76.5 mm", "area_efectiva": "27.5x69.5 mm", "material": "PVC flexible recortable"},
+    "pines_conexiones": "portabaterias integrado; variante exacta a confirmar",
+    "uso_inicial": "iluminacion de ojos en casco Iron Man; probar antes de cortar",
+    "riesgos": ["reduce vision", "no cortar zona LED", "no retirar pelicula reflectiva sin criterio"],
+    "fuente": "paginas 1-3 del PDF"
+  },
+  {
+    "id": "PDF-009",
+    "archivo": "Sa1f348513347422ab79d351befdf1b94A.pdf",
+    "componente_relacionado": "LED-002 ojos LED flexibles",
+    "tipo": "manual de uso",
+    "datos_clave": {"probar_antes": "instalar bateria y probar antes de cortar/pegar", "adhesivo": "silicon caliente recomendado", "prohibido": "502, pegamento instantaneo o liquido", "usb": "5V 1A", "baterias": "CR2032, 2xAAA o CR2025 segun version"},
+    "pines_conexiones": "depende de version: bateria o USB 5V",
+    "uso_inicial": "medir, marcar, cortar y fijar dentro de mascara/casco",
+    "riesgos": ["no mirar luz intensa", "no sumergir", "retirar baterias en almacenamiento", "no exponer a calor/fuego"],
+    "fuente": "manual completo paginas 1-6"
+  },
+  {
+    "id": "PDF-010",
+    "archivo": "Modulo de Interruptor tactil TTP223 TTP223B Sensor tactil capacitivo Digital Jog de 1 canal para KIT de bricolaje arduino - AliExpress 502.pdf",
+    "componente_relacionado": "IN-002 TTP223/HW-139",
+    "tipo": "sensor tactil capacitivo",
+    "datos_clave": {"chip": "TTP223B", "voltaje": "2.0-5.5 V", "salida": "bajo en reposo, alto al tocar", "VOH": "0.8 VCC", "VOL": "0.3 VCC", "respuesta": "220 ms bajo consumo / 60 ms rapido", "tamano": "23.7x23.7 mm"},
+    "pines_conexiones": "SIG, VCC, GND",
+    "uso_inicial": "boton tactil momentaneo para Arduino/ESP32",
+    "riesgos": ["no montar detras de metal", "confirmar modo latch/momentaneo", "evitar humedad excesiva"],
+    "fuente": "paginas 5-6 del PDF"
+  }
+]
