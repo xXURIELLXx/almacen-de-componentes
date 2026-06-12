@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xXURIELLXx/almacen-de-componentes/data/esquema_documentos_pdf.schema.json",
+  "title": "Indice de documentos PDF procesados",
+  "description": "Esquema para registrar documentos fuente y datos tecnicos extraidos como referencia, confirmado o pendiente.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "archivo", "tipo", "datos_clave", "fuente"],
+    "additionalProperties": true,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^PDF-[0-9]{3}$",
+        "description": "Identificador estable del documento procesado."
+      },
+      "archivo": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Nombre exacto del archivo fuente."
+      },
+      "ruta": {
+        "type": "string",
+        "description": "Ruta sugerida dentro de documentos/, si se conoce."
+      },
+      "componente_relacionado": {
+        "type": "string",
+        "description": "ID o nombre del componente relacionado en el inventario."
+      },
+      "tipo": {
+        "type": "string",
+        "description": "Tipo de documento o componente descrito. Puede ser libre para mantener compatibilidad con registros actuales."
+      },
+      "estado_revision": {
+        "type": "string",
+        "enum": ["nuevo", "procesado", "pendiente_revision", "requiere_validacion"]
+      },
+      "nivel_fuente": {
+        "type": "string",
+        "enum": ["oficial", "referencia", "usuario", "desconocido"]
+      },
+      "datos_clave": {
+        "type": "object",
+        "additionalProperties": {
+          "type": ["string", "number", "boolean", "array", "object", "null"]
+        },
+        "properties": {
+          "modelo": { "type": "string" },
+          "descripcion": { "type": "string" },
+          "voltaje_nominal": { "type": "string" },
+          "rango_voltaje": { "type": "string" },
+          "corriente": { "type": "string" },
+          "potencia": { "type": "string" },
+          "capacidades": { "type": "string" },
+          "limitantes": { "type": "string" },
+          "metodo_uso": { "type": "string" }
+        }
+      },
+      "pines_conexiones": {
+        "type": "string"
+      },
+      "uso_inicial": {
+        "type": "string"
+      },
+      "riesgos": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "validaciones_pendientes": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "fuente": {
+        "type": "string",
+        "description": "Pagina, seccion o evidencia revisada."
+      },
+      "notas": {
+        "type": "string"
+      }
+    }
+  }
+}
