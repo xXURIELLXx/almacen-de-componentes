@@ -2,29 +2,42 @@
 
 ## Objetivo
 
-Crear un nodo de medicion ambiental con ESP32 para aprender sensores, pantalla, eventos y comunicacion.
+Construir una ruta de pruebas para un nodo ambiental con ESP32, sensores de temperatura/humedad, PIR y pantalla TFT, manteniendo niveles logicos seguros.
 
-## Componentes sugeridos
+## Componentes relacionados
 
-- ESP32 ESP-WROOM-32 o ESP32-C3.
-- AHT10.
-- DHT11 o DHT22 como comparativo.
-- HC-SR501 para presencia.
-- TFT SPI 1.8 para lectura local.
-- Modulo touch como entrada simple.
+| ID | Componente | Uso |
+|---|---|---|
+| `MCU-002` | ESP32 Super Mini | controlador IoT compacto |
+| `MCU-003` | Live mini kit ESP32 | controlador IoT alternativo |
+| `SEN-001` | DHT11/DHT22 | temperatura y humedad |
+| `SEN-003` | PIR HC-SR501 | presencia/movimiento |
+| `SEN-004` | AHT10 | temperatura y humedad por I2C |
+| `DISP-001` | TFT SPI 1.8 128x160 | interfaz local |
+| `PWR-002` | TP4056 | energia LiPo 1S futura, solo con validacion |
 
-## Fases
+## Reglas de seguridad
 
-1. Leer temperatura y humedad por I2C.
-2. Mostrar datos por monitor serial.
-3. Mostrar datos en TFT.
-4. Agregar deteccion de movimiento.
-5. Enviar datos por WiFi.
-6. Registrar eventos para analisis posterior.
+- Tratar GPIO ESP32 como 3.3 V.
+- No conectar senales de 5 V directo a GPIO ESP32.
+- Validar si cada modulo acepta 3.3 V o requiere adaptacion.
+- No usar TP4056 con bateria 12 V.
+- Medir 3.3 V y 5 V antes de conectar perifericos.
 
-## Aplicaciones
+## Flujo inicial
 
-- Terrario automatizado.
-- Cuarto seco de filamento.
-- Monitor ambiental de habitacion.
-- Base para agente fisico IoT.
+1. Identificar la placa ESP32 real y su pinout.
+2. Cargar Blink o prueba USB sin sensores.
+3. Probar I2C con AHT10 si esta disponible.
+4. Probar DHT por separado.
+5. Probar PIR por separado y confirmar nivel de salida.
+6. Probar TFT SPI despues de validar jumper/logica.
+7. Integrar sensores uno por uno.
+
+## Entregables pendientes
+
+- Pinout elegido para la placa ESP32 real.
+- Sketch de lectura AHT10/DHT.
+- Prueba de PIR con registro serial.
+- Prueba de TFT con texto basico.
+- Diagrama de alimentacion.
